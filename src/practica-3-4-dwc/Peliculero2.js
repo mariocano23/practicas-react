@@ -9,17 +9,11 @@ function Peliculero2(props) {
                     <strong>{props.titulo}</strong> {/*He usado strong para resaltar el título.*/}
                 </h1>
                 <figure>
-                    <img src={props.cartel}></img>
+                    <img src={props.cartel}/>
                 </figure>
                 <p>
                     {props.children}
                 </p>
-                <button onClick={()=>{
-                    mostrar("elenco");
-                }}>Elenco</button>
-                <button onClick={()=>{
-                    mostrar("extra");
-                }}>Extra</button>
             </article>
         </React.Fragment>
     );

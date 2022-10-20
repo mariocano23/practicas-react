@@ -1,0 +1,10 @@
+.PiePagina{
+    background-color: grey;
+    text-align: center;
+    height: 75px;
+    margin: auto;
+}
+.PiePagina p{
+    padding-top: 25px;
+    margin: 0;
+}

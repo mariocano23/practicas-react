@@ -1,0 +1,14 @@
+.Pelicula figure img{
+    width: 25vw;
+    max-width: 300px;
+    min-width: 200px;
+    
+}.Pelicula figure{
+    text-align: center;
+}
+.Pelicula h1{
+    text-align: center;
+}
+.Pelicula{
+    border-bottom: 1px solid;
+}
