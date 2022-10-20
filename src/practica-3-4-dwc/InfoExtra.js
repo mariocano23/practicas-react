@@ -12,10 +12,10 @@ function InfoExtra(props) {
             <div className='InfoExtra'>
                 <div className='botonesExtra'>
                     <button onClick={()=>{
-                        mostrar("elenco");
+                        mostrar(elenco);
                     }}>Elenco</button>
                     <button onClick={()=>{
-                        mostrar("extra");
+                        mostrar(extra);
                     }}>Extra</button>
                 </div>
                 <div className="elenco" ref={elenco}>
