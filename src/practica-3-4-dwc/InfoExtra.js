@@ -9,15 +9,15 @@ function InfoExtra(props) {
     const extra = useRef(null);
     return(
         <React.Fragment>
-            <div className='InfoExtra'>
-                <div className='botonesExtra'>
+            <div className='InfoExtra'> 
+                <div className='botonesExtra'>{/*Div que contiene los botones*/}
                     <button onClick={()=>{
                         mostrar(elenco);
                     }}>Elenco</button>
                     <button onClick={()=>{
                         mostrar(extra);
                     }}>Extra</button>
-                </div>
+                </div>{/*Div que contiene la información*/}
                 <div className="elenco" ref={elenco}>
                     {props.elenco}
                 </div>

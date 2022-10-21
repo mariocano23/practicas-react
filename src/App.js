@@ -6,13 +6,13 @@ import Cabecera from './practica-3-4-dwc/Cabecera';
 import Peliculero2 from './practica-3-4-dwc/Peliculero2';
 import PiePagina from './practica-3-4-dwc/PiePagina';
 import InfoExtra from './practica-3-4-dwc/InfoExtra';
-import peliculas from './practica-3-4-dwc/Ejercicio2.json';
+import peliculas from './practica-3-4-dwc/peliculas.json';
 
 function App() {
   return (
     <React.Fragment>
       <Contenedor>
-      <Cabecera descri="Página de Películas"></Cabecera>
+      <Cabecera descri="Página de Películas"/>
                 {peliculas["peliculas"].map((v) =>{
                     return(
                       <React.Fragment>
@@ -22,12 +22,12 @@ function App() {
                             {v.resumen}
                         </Peliculero2>
 
-                        <InfoExtra extra={v.director}></InfoExtra>
+                        <InfoExtra extra={v.director} elenco={v.elenco}/>
                       </React.Fragment>
                     );
                 })}
                 
-            <PiePagina autor="Mario Cano"></PiePagina>
+            <PiePagina autor="Mario Cano"/>
       </Contenedor>
     </React.Fragment>
     

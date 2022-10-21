@@ -7,3 +7,6 @@ display: none;
 .mostrado{
     display: block;
 }
+.InfoExtra{
+    border-bottom: 1px solid;
+}
