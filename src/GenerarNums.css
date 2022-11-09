@@ -1,0 +1,25 @@
+p{
+    background-color: gray;
+    width: 150px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 2px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+#botones{
+    text-align: center;
+}
+button{
+    background: darkgray;
+    border-radius: 3px;
+    margin: 2px;
+}
