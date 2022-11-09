@@ -7,17 +7,19 @@ function GeneraNums() {
 
     const [nums, setNums] = useState(datosInicales);
 
-    const generarNum =() => {
+    const generarNum =() => { //Función que genera un número aleatorio del 1 al 100, comprueba que no esta en el array, después lo guarda y actualiza el estado.
         let nuevoNum = 0;
-        do{
-           nuevoNum = Math.floor(Math.random() * (100))+1;
-        }while (nums.indexOf(nuevoNum)!==-1||nums.length>99);   
-        setNums([...nums,nuevoNum]);
+        if(nums.length<=99){
+            do{
+                nuevoNum = Math.floor(Math.random() * (100))+1;
+             }while (nums.indexOf(nuevoNum)!==-1);   
+             setNums([...nums,nuevoNum]);
+        }
     };
-    const borrarNums = () => {
+    const borrarNums = () => {//Función que borra todos los números guardados.
         setNums(datosInicales);
     };
-    const borrarNum = (nuevoNum) => {
+    const borrarNum = (nuevoNum) => { //Función que borra del estado el número que se pase como parametro.
         const nuevosNums = nums.filter((num) => {
             return num !== nuevoNum;
         });

@@ -20,6 +20,7 @@ li{
 }
 button{
     background: darkgray;
+    border: 1px solid black;
     border-radius: 3px;
     margin: 2px;
 }

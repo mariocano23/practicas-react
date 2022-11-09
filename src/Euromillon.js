@@ -3,39 +3,38 @@ import './Euromillon.css';
 
 function Euromillon() {
     
-    const datosInicales ={
-        ganador:[5, 45, 21, 34, 27, 6, 12],
-        boletos: [],
-    };
+    const ganador =[5, 45, 21, 34, 27, 6, 12];
+    const datosInicales =[];
 
     const [euromillon, setEuromillon] = useState(datosInicales);
 
-    const generarBoleto =() => {
+    const generarBoleto =() => {//Función que genera un boleto.
         let nuevoBoleto = [];
         do{
-            nuevoBoleto =[Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (12))+1,Math.floor(Math.random() * (12))+1];
-        }while (euromillon.boletos.indexOf(nuevoBoleto)!==-1);   
-        setEuromillon({...euromillon, boletos:[...euromillon.boletos,nuevoBoleto]});
+            let boletaGenerado = [Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (50))+1,Math.floor(Math.random() * (12))+1,Math.floor(Math.random() * (12))+1];
+            nuevoBoleto = { boleto:boletaGenerado, acertado:evaluarBoleto(boletaGenerado,ganador)};
+        }while (euromillon.indexOf(nuevoBoleto)!==-1);   
+        setEuromillon([...euromillon, nuevoBoleto]);
     };
 
-    const imprimirBoleto =(boleto) =>{
+    const imprimirBoleto =(boleto) =>{//Función que imprime un boleto bien formateado.
         return boleto[0]+"-"+boleto[1]+"-"+boleto[2]+"-"+boleto[3]+"-"+boleto[4]+"-"+boleto[5]+"*-"+boleto[6]+"*";
     }
 
-    const evaluarBoleto =(boleto) =>{
+    const evaluarBoleto =(boleto,ganador) =>{//Función que evalua si un boleto es ganador o no.
         let aciertos =0;
         let aciertosEstrellas =0;
 
         for (let index = 0; index < 5; index++) {
             for (let subIndex = 0; subIndex < 5; subIndex++) {
-                if (boleto[index]===euromillon.ganador[subIndex]) {
+                if (boleto[index]===ganador[subIndex]) {
                     aciertos++
                 }
             }
         }
         for (let index = 5; index < 7; index++) {
             for (let subIndex = 5; subIndex < 7; subIndex++) {
-                if (boleto[index]===euromillon.ganador[subIndex]) {
+                if (boleto[index]===ganador[subIndex]) {
                     aciertosEstrellas++
                 }
             }
@@ -51,8 +50,8 @@ function Euromillon() {
         <React.Fragment>
             <p>
                 <ul>
-                    {euromillon.boletos.map((boleto) => {
-                        return <li className={evaluarBoleto(boleto)} key={imprimirBoleto(boleto)} >{imprimirBoleto(boleto)}</li>})   
+                    {euromillon.map((boleto) => {
+                        return <li className={boleto.acertado} key={imprimirBoleto(boleto.boleto)} >{imprimirBoleto(boleto.boleto)}</li>})   
                     }
                 </ul>
             </p>

@@ -7,7 +7,7 @@ import Euromillon from './Euromillon';
 function App() {
   return (
     <React.Fragment>
-      {/*<GeneraNums></GeneraNums>*/}
+      {/* <GeneraNums></GeneraNums> */}
       <Euromillon></Euromillon>
     </React.Fragment>
     
