@@ -1,14 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import GeneraNums from './GeneraNums';
-import Euromillon from './Euromillon';
+import Contenedor from './Contenedor';
+import Cabecera from './Cabecera';
+import PiePagina from './PiePagina';
+import Compra from './Compra';
+
+
 
 function App() {
   return (
     <React.Fragment>
-      {/* <GeneraNums></GeneraNums> */}
-      <Euromillon></Euromillon>
+      <Contenedor>
+        <Cabecera descri="Lista de la compra"/>
+          <Compra></Compra>
+        <PiePagina autor="Mario Cano" />
+      </Contenedor>
     </React.Fragment>
     
   );
