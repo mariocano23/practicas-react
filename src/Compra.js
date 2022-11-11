@@ -42,7 +42,7 @@ function Compra() {
                     onChange={actualizarFila}/>
                 </p>
                 <p>
-                <label htmlFor="descri">Descrición: </label>
+                <label htmlFor="descri">Descripción: </label>
                 <input type="textarea" name="descri" id="descri" 
                     value={fila.descri}
                     onChange={actualizarFila}/>
@@ -67,7 +67,7 @@ function Compra() {
                         <React.Fragment>
                             <li  key={fila.id} >
                                 <p>Nombre: {fila.nombre}</p>
-                                <p>Descrición: {fila.descri}</p>
+                                <p>Descripción: {fila.descri}</p>
                                 <p>Precio: {fila.precio}</p>
                                 <p>cantidad: {fila.cantidad}</p>
                             </li>
