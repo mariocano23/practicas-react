@@ -54,9 +54,13 @@ function Compra() {
     }
     const  vaciarLista = () => {
         setLista(datosInicalesLista);
-        console.log(datosInicalesLista);
     }
-
+    const eliminarProducto =(nuevaFila) =>{
+        const nuevaLista = lista.filter((fila) => {
+            return fila.id !== nuevaFila.id;
+        });
+        setLista(nuevaLista);
+    }
 
     return(
         <React.Fragment>
@@ -64,25 +68,25 @@ function Compra() {
                 <div id="formulario">
                         <form id="productoForm">
                         <p>
-                        <label htmlFor="nombre">Nombre: </label>
+                        <label htmlFor="nombre">Nombre: </label><br/>
                         <input type="text" name="nombre" id="nombre" 
                             value={fila.nombre}
                             onChange={actualizarFila}/>
                         </p>
                         <p>
-                        <label htmlFor="descri">Descripción: </label>
+                        <label htmlFor="descri">Descripción: </label><br/>
                         <input type="textarea" name="descri" id="descri" 
                             value={fila.descri}
                             onChange={actualizarFila}/>
                         </p>
                         <p>
-                        <label htmlFor="precio">Precio: </label>
+                        <label htmlFor="precio">Precio: </label><br/>
                         <input type="number" name="precio" id="precio" 
                             value={fila.precio}
                             onChange={actualizarFila}/>
                         </p>
                         <p>
-                        <label htmlFor="cantidad">Cantidad: </label>
+                        <label htmlFor="cantidad">Cantidad: </label><br/>
                         <input type="number" name="cantidad" id="cantidad" 
                             value={fila.cantidad}
                             onChange={actualizarFila}/>
@@ -93,11 +97,13 @@ function Compra() {
                 </div>
                 <div id="lista">
                     <ul>
-                        <li id="noProductos" className={lista==datosInicalesLista ? "": "oculto"}>No hay productos</li>
+                        <li id="noProductos" className={lista[0]==undefined ? "": "oculto"}>No hay productos</li>
                         {lista.map((fila) => {
                             return (
                             <React.Fragment>
-                                <li className="fila" key={fila.id} >
+                                <li className="fila" key={fila.id} onClick={() => {
+                                    eliminarProducto(fila);
+                                }}>
                                     <p>ID: {fila.id}</p>
                                     <p>Nombre: {fila.nombre}</p>
                                     <p>Descripción: {fila.descri}</p>
@@ -109,9 +115,6 @@ function Compra() {
                     </ul>
                 </div>
             </div>
-            
-
-
         </React.Fragment>
     )
     
