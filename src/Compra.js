@@ -24,18 +24,18 @@ function Compra() {
         return id;
     }
 
-    const actualizarFila = (e) => {
+    const actualizarFila = (e) => {//Función que actualiza el estado del producto.
         const { name, value } = e.target;
         setFila({ ...fila, [name]: value, id:creaIds()});
     }
 
-    const  anyadirProducto = () => {
+    const  anyadirProducto = () => {//Función que añade un producto a la lista y actualiza su estado.
         if(!comprobarProducto()){
             setLista([...lista, fila]);
             setFila(datosInicalesFila);
         }
     }
-    const comprobarProducto =() =>{
+    const comprobarProducto =() =>{//Función que comprueba el formulario del producto.
         let error=false;
         if (fila.nombre=="") {
             error=true;
@@ -52,10 +52,10 @@ function Compra() {
         }
         return error;
     }
-    const  vaciarLista = () => {
+    const  vaciarLista = () => {//Función que vacia la lista y actualiza su estado.
         setLista(datosInicalesLista);
     }
-    const eliminarProducto =(nuevaFila) =>{
+    const eliminarProducto =(nuevaFila) =>{//Función que elimina un producto de la lista y actualiza su estado.
         const nuevaLista = lista.filter((fila) => {
             return fila.id !== nuevaFila.id;
         });
