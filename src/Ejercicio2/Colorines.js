@@ -13,14 +13,19 @@ function Colorines(){
         setColor(color);
     }
 
+    useEffect(() => { //Este useEffect le da un evento a la ventana cuando la clickas.
+        window.addEventListener("click", cambiarColorRandom);
+        return () => {
+            window.removeEventListener("click", cambiarColorRandom);
+        }
+    },[])
+
     useEffect(() => {
-        console.log(color);
         document.body.style.backgroundColor=color;
     },[color])
 
     return(
         <React.Fragment>
-            <button onClick={cambiarColorRandom}>Cambiar color del fondo.</button>
         </React.Fragment>
     )
 
