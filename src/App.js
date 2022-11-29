@@ -1,21 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Contenedor from './Contenedor';
-import Cabecera from './Cabecera';
-import PiePagina from './PiePagina';
-import Compra from './Compra';
+import Localizador from './Ejercicio1/Localizador';
+import Colorines from './Ejercicio2/Colorines';
 
 
 
 function App() {
   return (
     <React.Fragment>
-      <Contenedor>
-        <Cabecera descri="Lista de la compra"/>
-          <Compra></Compra>
-        <PiePagina autor="Mario Cano" />
-      </Contenedor>
+      <Localizador/>
+      <Colorines/>
     </React.Fragment>
     
   );
