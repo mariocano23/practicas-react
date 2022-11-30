@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import Localizador from './Ejercicio1/Localizador';
-import Colorines from './Ejercicio2/Colorines';
+import Peliculas from './Ejercicio1/Peliculas';
 
 
 
 function App() {
   return (
     <React.Fragment>
-      <Localizador/>
-      <Colorines/>
+      <Peliculas/>
     </React.Fragment>
     
   );
