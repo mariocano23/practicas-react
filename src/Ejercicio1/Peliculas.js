@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getDatosResults,getDatos } from "./Bibliotecas/bibliotecaGets";
+import DatosActor from "./DatosActor";
 import DatosPelicula from "./DatosPelicula";
 import ListaActores from "./ListaActores";
 import ListaPeliculas from "./ListaPeliculas";
@@ -37,7 +38,6 @@ function Peliculas(){
 
     const obtenActor = async (enlace) =>  {
         let datos = await getDatos(enlace);
-        console.log(datos);
         setActor(datos);
     }
 
@@ -56,7 +56,9 @@ function Peliculas(){
             <div id="listaActores">
                 <ListaActores datos={actores} funcion={obtenActor}/>
             </div>
-            
+            <div id="infoActor">
+                <DatosActor datos={actor}/>
+            </div>
         </React.Fragment>
     )
 

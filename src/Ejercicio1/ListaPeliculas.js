@@ -1,6 +1,5 @@
 import React from "react";
 function ListaPeliculas(props){
-    console.log(":(");
     return(
     <React.Fragment>
         <ul id="listadoPeliculas" onClick={async (event) => {
