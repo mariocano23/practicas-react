@@ -26,12 +26,12 @@ function App() {
     const [vehiculos, setVehiculos] = useState(datosIncialArray);
     const [vehiculo, setVehiculo] = useState(datosIncialObjeto);
 
-    const obtenPeliculas = async (enlace) =>  {
+    const obtenPeliculas = async (enlace) =>  {//Función que cambia el estado de peliculas.
         let datos = await getDatosResults(enlace);
         setPeliculas(datos);
     }
 
-    const obtenPelicula = async (enlace) =>  {
+    const obtenPelicula = async (enlace) =>  {//Función que cambia el estado de pelicula y reincia el de actores, actor, naves, nave, vehiculos y vehiculo.
         let datos = await getDatos(enlace);
         setPelicula(datos);
         obtenActores(datos.characters.slice(0,9));
@@ -41,7 +41,7 @@ function App() {
         setVehiculos(datosIncialArray);
         setVehiculo(datosIncialObjeto);
     }
-    const obtenActores = async (array) => {
+    const obtenActores = async (array) => {//Función que cambia el estado de actores.
         let promesasActores = array.map((actores,index) =>{
             if (index<=9) {
                 return getDatos(actores);
@@ -51,7 +51,7 @@ function App() {
         let valoresActores = await Promise.allSettled(promesasActores);
         setActores(valoresActores);
     }
-    const obtenNaves = async (array) => {
+    const obtenNaves = async (array) => {//Función que cambia el estado de naves.
         let promesasNaves = array.map((naves) =>{
             return getDatos(naves);
         }
@@ -59,7 +59,7 @@ function App() {
         let valoresNaves = await Promise.allSettled(promesasNaves);
         setNaves(valoresNaves);
     }
-    const obtenVehiculos = async (array) => {
+    const obtenVehiculos = async (array) => {//Función que cambia el estado de vehiculos.
         let promesasVehiculos = array.map((vehiculos) =>{
             return getDatos(vehiculos);
         }
@@ -68,7 +68,7 @@ function App() {
         setVehiculos(valoresVehiculos);
     }
 
-    const obtenActor = async (enlace) =>  {
+    const obtenActor = async (enlace) =>  {//Función que cambia el estado de actor, naves y vehiculos y reinicia el de nave y vehiculo.
         let datos = await getDatos(enlace);
         setActor(datos);
         obtenNaves(datos.starships);
@@ -77,16 +77,16 @@ function App() {
         setVehiculo(datosIncialObjeto);
 
     }
-    const obtenNave = async (enlace) =>  {
+    const obtenNave = async (enlace) =>  {//Función que cambia el estado de nave.
         let datos = await getDatos(enlace);
         setNave(datos);
     }
-    const obtenVehiculo = async (enlace) =>  {
+    const obtenVehiculo = async (enlace) =>  {//Función que cambia el estado de vehiculo.
         let datos = await getDatos(enlace);
         setVehiculo(datos);
     }
 
-    useEffect(()=>{
+    useEffect(()=>{//Este useEffect ejecuta la función "obtenPeliculas" al iniciar la página.
         obtenPeliculas(url);
     },[]);
 
