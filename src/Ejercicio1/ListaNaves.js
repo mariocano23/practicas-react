@@ -15,7 +15,7 @@ function ListaNaves(props){
                             {info.value.name}
                         </li>
                     )
-                }): "No hay Naves."
+                }): ""
             }
         </ul>
     </React.Fragment>

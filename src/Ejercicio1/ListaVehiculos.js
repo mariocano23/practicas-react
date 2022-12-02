@@ -15,7 +15,7 @@ function ListaVehiculos(props){
                             {info.value.name}
                         </li>
                     )
-                }): "No hay Vehiculos."
+                }): ""
             }
         </ul>
     </React.Fragment>
