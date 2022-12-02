@@ -1,0 +1,15 @@
+#listaPelis ul{
+    list-style: none;
+    border: 3px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    width: 20vw;
+    margin-right: 3vw;
+    margin-left: 2vw;
+    margin-top: 50px;
+    background-color: black;
+  }
+  #listaPelis li{
+    margin: 10px;
+  }
+  

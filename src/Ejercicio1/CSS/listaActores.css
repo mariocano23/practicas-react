@@ -1,0 +1,19 @@
+#listadoActores{
+    list-style: none;
+    border: 3px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    width: 20vw;
+    margin-right: 3vw;
+    margin-left: 2vw;
+    margin-top: 50px;
+    background-color: black;
+  }
+  #listadoActores li{
+    margin: 5px;
+  }
+  #listadoActores h1{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0px;
+  }

@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+#contenedor{
+  display: flex;
+  flex-wrap: wrap;
+}
+#infoActor{
+  width: 30vw;
+  border: 5px solid yellow;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: black;
+  margin-top: 20px;
+  margin-right: 2vw;
+}
+#infoActor h2{
+  border-bottom: 5px solid yellow;
+  font-weight:bold;
+  font-size: 3rem;
+}
+#infoActor ul{
+  list-style: none;
+}
+#infoActor p{
+  margin: 5px;
+}
+#naveVehiculo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  border: 5px solid yellow;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: black;
+  margin-top: 20px;
+  margin-right: 2vw;
+}
+#infoPeli{
+  width: 69vw;
+  border: 5px solid yellow;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: black;
+  margin-top: 20px;
+  margin-right: 2vw;
+}
+#infoPeli h1{
+  border-bottom: 5px solid yellow;
+  font-weight:bold;
+}
+.pelicula:hover,.actor:hover,.nave:hover,.vehiculo:hover{
+  cursor:pointer;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import './CSS/listaPeliculas.css';
 function ListaPeliculas(props){
     return(
     <React.Fragment>

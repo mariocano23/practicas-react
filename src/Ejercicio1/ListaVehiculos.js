@@ -1,27 +1,25 @@
 import React from "react";
-import './CSS/listaActores.css';
-function ListaActores(props){
+function ListaVehiculos(props){
     return(
     <React.Fragment>
-        
-        <ul id="listadoActores" onClick={ (event) => {
+        <h2>Vehículos</h2>
+        <ul id="listadoVehiculos" onClick={ (event) => {
             if(event.target.tagName=="LI"){
                 props.funcion(event.target.id);
             }
         }}>
-            <h1>Actores</h1>
             {props.datos.legth!==0 ?
                 props.datos.map((info, index) =>{
                     return(
-                        <li key={index} className="actor" id={info.value.url}>
+                        <li key={index} className="vehiculo" id={info.value.url}>
                             {info.value.name}
                         </li>
                     )
-                }): "No hay Actores."
+                }): "No hay Vehiculos."
             }
         </ul>
     </React.Fragment>
     );
 }
 
-export default ListaActores;
+export default ListaVehiculos;

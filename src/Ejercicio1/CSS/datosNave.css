@@ -1,0 +1,13 @@
+#datosNave{
+    width: 25vw;
+    border: 5px solid yellow;
+    border-radius: 7px;
+    padding: 10px;
+    background-color: black;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+#datosNave h1{
+    border-bottom: 5px solid yellow;
+    font-weight:bold;
+}
