@@ -129,7 +129,7 @@ function App() {
                     : "No has seleccionado ningúna nave."
                 } 
                 </div>
-                <h2>Vehiculo</h2>
+                <h2>Vehículo</h2>
                 <div id="infoVehiculo">
                 {Object.keys(vehiculo).length>0 ?
                     <DatosVehiculo datos={vehiculo}/>
