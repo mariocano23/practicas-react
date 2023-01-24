@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { datosContexto } from "./DatosContexto";
 import './CSS/datosVehiculo.css';
 
-function DatosVehiculo(props) {
+function DatosVehiculo() {
+
+    const contexto = useContext(datosContexto);
+
     return(
     <React.Fragment>
-        <div id="datosVehiculo">
-            <h1>{props.datos.name}</h1>
-            <p>Modelo: {props.datos.model}</p>
-            <p>Fabricante: {props.datos.manufacturer}</p>
-            <p>Longitud: {props.datos.length}</p>
-            <p>Clase de vehículo:  {props.datos.vehicle_class}</p>
-        </div>
+        {Object.keys(contexto.vehiculo).length>0 ?
+            <div id="datosVehiculo">
+                <h1>{contexto.vehiculo.name}</h1>
+                <p>Modelo: {contexto.vehiculo.model}</p>
+                <p>Fabricante: {contexto.vehiculo.manufacturer}</p>
+                <p>Longitud: {contexto.vehiculo.length}</p>
+                <p>Clase de vehículo:  {contexto.vehiculo.vehicle_class}</p>
+            </div>
+            : "No has seleccionado ningún vehículo."
+        } 
     </React.Fragment>
     )
 }

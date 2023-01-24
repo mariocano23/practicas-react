@@ -1,15 +1,20 @@
-import React from "react";
-function ListaVehiculos(props){
+import React, { useContext } from "react";
+import { datosContexto } from "./DatosContexto";
+
+function ListaVehiculos(){
+
+    const contexto = useContext(datosContexto);
+
     return(
     <React.Fragment>
         <h2>Vehículos</h2>
         <ul id="listadoVehiculos" onClick={ (event) => {
             if(event.target.tagName=="LI"){
-                props.funcion(event.target.id);
+                contexto.obtenVehiculo(event.target.id);
             }
         }}>
-            {props.datos.legth!==0 ?
-                props.datos.map((info, index) =>{
+            {contexto.vehiculos.legth!==0 ?
+                contexto.vehiculos.map((info, index) =>{
                     return(
                         <li key={index} className="vehiculo" id={info.value.url}>
                             {info.value.name}

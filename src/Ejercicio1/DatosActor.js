@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { datosContexto } from "./DatosContexto";
 
-function DatosActor(props) {
+function DatosActor() {
+
+    const contexto = useContext(datosContexto);
+
     return(
     <React.Fragment>
+        {Object.keys(contexto.actor).length>0 ? 
         <div id="datosActor">
-            <p>{props.datos.name}</p>
-            <p>Genero: {props.datos.gender}</p>
-            <p>Altura: {props.datos.height}</p>
-            <p>Peso: {props.datos.mass}</p>
-            <p>Color de pelo:  {props.datos.hair_color}</p>
-            <p>Color de ojos:  {props.datos.eye_color}</p>
+            <p>{contexto.actor.name}</p>
+            <p>Genero: {contexto.actor.gender}</p>
+            <p>Altura: {contexto.actor.height}</p>
+            <p>Peso: {contexto.actor.mass}</p>
+            <p>Color de pelo:  {contexto.actor.hair_color}</p>
+            <p>Color de ojos:  {contexto.actor.eye_color}</p>
         </div>
+            : "No has seleccionado ningún actor."
+        }
     </React.Fragment>
     )
 }

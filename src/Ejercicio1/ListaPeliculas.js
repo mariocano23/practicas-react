@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import './CSS/listaPeliculas.css';
-function ListaPeliculas(props){
+import { datosContexto } from "./DatosContexto";
+function ListaPeliculas(){
+
+    const contexto = useContext(datosContexto);
+
     return(
     <React.Fragment>
         <ul id="listadoPeliculas" onClick={async (event) => {
             if(event.target.tagName=="LI"){
-                props.funcion(event.target.id);
+                contexto.obtenPelicula(event.target.id);
             }
         }}>
-            {props.datos.legth!==0 ?
-                props.datos.map((info, index) =>{
+            {contexto.peliculas.legth!==0 ?
+                contexto.peliculas.map((info, index) =>{
                     return(
                         <li key={index} className="pelicula" id={info.url}>
                             {info.title}
